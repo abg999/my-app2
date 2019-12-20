@@ -1,32 +1,30 @@
 {
-  "name": "my-app",
+  "name": "my-app2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "net": "^1.0.2",
-    "next": "^9.1.6",
-    "next-routes": "^1.4.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.2",
-    "solc": "^0.6.0",
-    "truffle-hdwallet-provider": "^1.0.17",
-    "web3": "^1.2.4"
-  },
-  "engines": {
-    "node": "10.16.3"
-  },
-  "devDependencies": {},
+  "main": "server.js",
   "scripts": {
-    "dev": "next",
-     "build": "next build",
-     "start": "next start -p $PORT",
-     "heroku-postbuild": "npm run build",
-     "test": "echo \"Error: no test specified\" && exit 1"
+    "client-install":"npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently  \"npm run server\" \"npm run client\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abg999/my-app2.git"
+  },
+  "author": "Ashish Gangaramani, Megha Sahu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abg999/my-app2/issues"
+  },
+  "homepage": "https://github.com/abg999/my-app2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.1"
+  }
 }
