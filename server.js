@@ -10,14 +10,14 @@ app.use(bodyParser.json());
 app.get('/api',function(req,res){
 	res.send('hello');
 });
-if(process.env.NODE_ENV === 'production') {
-	//set static folder
-	app.use(express.static('client/pages'));
+// if(process.env.NODE_ENV === 'production') {
+// 	//set static folder
+// 	app.use(express.static('client/pages'));
 
-	app.get('*',(req ,res)=>{
-		res.sendFile(path.resolve(__dirname, 'client', 'pages', 'index.js'));
-	});
-}
+// 	app.get('*',(req ,res)=>{
+// 		res.sendFile(path.resolve(__dirname, 'client', 'pages', 'index.js'));
+// 	});
+// }
 
 const port = process.env.PORT || 5000;
 
